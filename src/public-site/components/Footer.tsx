@@ -37,6 +37,14 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <Link
+                  to="/manage"
+                  className="block text-[13px] text-white/40 hover:text-white hover:text-accent transition-colors duration-200 no-underline border-t border-white/10 pt-3"
+                >
+                  Staff Portal
+                </Link>
+              </div>
             </div>
           </div>
 

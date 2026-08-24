@@ -86,7 +86,17 @@ export function Navbar() {
             </nav>
 
             {/* CTA + Mobile Toggle */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
+              <Link
+                to="/manage"
+                className={`hidden md:inline-flex items-center text-[12px] font-semibold tracking-[0.1em] uppercase transition-all duration-200 cursor-pointer no-underline ${
+                  scrolled
+                    ? 'text-text-secondary hover:text-primary'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                Staff Portal
+              </Link>
               <button
                 onClick={() => navigate('/enquiry')}
                 className={`hidden sm:inline-flex items-center h-[40px] px-6 text-[12px] font-semibold tracking-[0.1em] uppercase rounded-full transition-all duration-200 cursor-pointer border-0 ${
@@ -137,12 +147,18 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <div className="mt-6 pt-6 border-t border-border">
+              <div className="mt-6 pt-6 border-t border-border flex flex-col gap-3">
                 <button
                   onClick={() => { setMobileOpen(false); navigate('/enquiry'); }}
                   className="w-full h-[48px] bg-primary text-white text-[13px] font-semibold tracking-[0.1em] uppercase rounded-full hover:bg-primary-deep transition-colors duration-200 border-0 cursor-pointer"
                 >
                   Check Availability
+                </button>
+                <button
+                  onClick={() => { setMobileOpen(false); navigate('/manage'); }}
+                  className="w-full h-[48px] bg-transparent text-text-secondary hover:text-primary text-[13px] font-semibold tracking-[0.1em] uppercase rounded-full border border-border hover:border-primary transition-colors duration-200 cursor-pointer"
+                >
+                  Staff Portal
                 </button>
               </div>
             </nav>
